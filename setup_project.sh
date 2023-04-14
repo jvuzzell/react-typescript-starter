@@ -367,19 +367,19 @@ cat <<EOT >> deploy/example-config.json
 EOT
 
 cp deploy/example-config.json deploy/config.json
-  
+
+# Add Git
+git init
+
 # Add gitignore to new react project
 cat <<EOT >> .gitignore
 node_modules/ 
 public/
 deploy/config.json
-EOT 
+EOT
 
 git add .gitignore 
 git commit -m "Add $project_name to gitignore"
-
-# Add Git
-git init
 
 # Done! 
 echo "\n" 
