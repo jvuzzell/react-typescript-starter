@@ -26,6 +26,15 @@ if [ "$1" != "" ];then
 else
   project_name="my_project"
 fi 
+ 
+# Ignore new project 
+cat <<EOT >> .gitignore
+$project_name/
+EOT
+ 
+git checkout -b $project_name
+git add .gitignore 
+git commit -m "Add $project_name to git ignore"
 
 # Create project directory
 mkdir $project_name
@@ -358,6 +367,10 @@ cat <<EOT >> deploy/example-config.json
 EOT
 
 cp deploy/example-config.json deploy/config.json
+ 
+cat <<EOT >> .gitignore
+node_modules/
+EOT
 
 # Add Git
 git init
