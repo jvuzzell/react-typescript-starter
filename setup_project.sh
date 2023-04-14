@@ -379,7 +379,7 @@ deploy/config.json
 EOT
 
 git add .gitignore 
-git commit -m "Add $project_name to gitignore"
+git commit -m "Add node_modules and public directories as well as deploy/config.json to gitignore"
 
 # Done! 
 echo "\n" 
