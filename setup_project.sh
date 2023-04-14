@@ -34,7 +34,7 @@ EOT
  
 git checkout -b $project_name
 git add .gitignore 
-git commit -m "Add $project_name to git ignore"
+git commit -m "Add $project_name to gitignore"
 
 # Create project directory
 mkdir $project_name
@@ -367,10 +367,16 @@ cat <<EOT >> deploy/example-config.json
 EOT
 
 cp deploy/example-config.json deploy/config.json
- 
+  
+# Add gitignore to new react project
 cat <<EOT >> .gitignore
-node_modules/
-EOT
+node_modules/ 
+public/
+deploy/config.json
+EOT 
+
+git add .gitignore 
+git commit -m "Add $project_name to gitignore"
 
 # Add Git
 git init
